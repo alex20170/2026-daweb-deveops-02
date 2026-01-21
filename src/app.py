@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from datetime import datetime
 import locale
 
+
 app = Flask(__name__)
 locale.setlocale(locale.LC_TIME, '')
 
