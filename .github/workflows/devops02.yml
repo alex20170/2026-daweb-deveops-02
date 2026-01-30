@@ -30,12 +30,7 @@ jobs:
           context: .
           push: true 
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/galeria:latest
-# ... Cortado
-jobs:
-  build:
-    # ... Cortado
-
-  # código añadido
+    # código añadido
   aws:
     name: Deploy image to aws
     needs: build
@@ -52,7 +47,7 @@ jobs:
         key: ${{ secrets.AWS_PRIVATEKEY }}
         source: "docker-compose.yml"
         target: /home/admin
-    # 2
+      # 2
     - name: script deploy docker services 
       uses: appleboy/ssh-action@v1.0.3
       with:
